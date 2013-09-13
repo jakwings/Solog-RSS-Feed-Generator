@@ -3,7 +3,7 @@
  * @Version:    1.0.0
  * @Name:       Solog RSS Feed Generator
  * @Info:       一个简单的 RSS 2.0 Feed 生成工具
- * @Date:       2013-09-14 00:37:05 +08:00
+ * @Date:       2013-09-14 01:31:50 +08:00
  * @File:       rss.class.php
  * @Author:     Jak Wings
  * @License:    GPLv3
@@ -148,6 +148,7 @@ class RssFeed
   */
   public function Publish()
   {
+    @ob_clean();
     @header('Content-Type: text/xml; charset="utf-8"');
     echo $this->_Generate();
   }
