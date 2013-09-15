@@ -66,11 +66,11 @@ $rss->Config('cloud', array(
   'value' => '',  // 可选（optional）
 ));
 $rss->Config('image', array(
-  'value' => array(  // 子元素（sub-elements）
+  'value' => array(
     'url' => 'http://example.com/favicon.png',
     'title' => '"Title \'oh\'"',
     'link' => 'http://example.com',
-    'example' => array(
+    'example' => array(  // 子元素（sub-elements）
       'attrs' => array(
         'a' => 1,
         'b' => 2,
