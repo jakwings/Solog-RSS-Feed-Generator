@@ -3,12 +3,12 @@
  * @Version:    1.0.0
  * @Name:       Solog RSS Feed Generator
  * @Info:       一个简单的 RSS 2.0 Feed 生成工具
- * @Date:       2013-09-14 01:31:50 +08:00
+ * @Date:       2013-09-15 11:34:58 +08:00
  * @File:       rss.class.php
  * @Author:     Jak Wings
  * @License:    GPLv3
  * @Website:    https://github.com/jakwings/Solog-RSS-Feed-Generator
- * @Compatible: PHP/5.2.0+,5.4.x,5.5.x
+ * @Compatible: PHP/5.2.x,5.3.x,5.4.x,5.5.x
 \******************************************************************************/
  
 
