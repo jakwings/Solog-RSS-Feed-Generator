@@ -3,7 +3,7 @@
  * @Version:    1.0.0
  * @Name:       Solog RSS Feed Generator
  * @Info:       一个简单的 RSS 2.0 Feed 生成工具
- * @Date:       2013-09-15 11:34:58 +08:00
+ * @Date:       2013-09-15 11:40:17 +08:00
  * @File:       rss.class.php
  * @Author:     Jak Wings
  * @License:    GPLv3
@@ -64,14 +64,15 @@ class RssFeed
 
   /**
   * @info   设定或返回 channel 的配置信息
+  *         <name attr="..." attr="...">value</name>
   * @param  {String}  $name: 元素名称
   * @param  {String}  $value: 内容
   *         {Array}   $config:
-  *                   {Array}  attrs: 属性-内容的键值对）
+  *                   {Array}  attrs: 属性（键值对）
   *                   {String|Array} value: 内容，或子元素
   * @return void
   */
-  public function Config($name, $config = NULL)
+  public function Config($name, $config)
   {
     if ( !array_key_exists($name, $this->_channel) ) {
       return FALSE;
@@ -91,6 +92,12 @@ class RssFeed
 
   /**
   * @info   添加一篇文章
+  *         <item>
+  *           <name attr="..." attr="...">value</name>
+  *           <name attr="..." attr="...">value</name>
+  *           ...
+  *           <name attr="..." attr="...">value</name>
+  *         </item>
   * @param  {Array}   $config: 文章属性集
   *                   {String}  title: 文章标题
   *                   {String}  link: 文章链接
