@@ -3,7 +3,7 @@
  * @Version:    1.0.0
  * @Name:       Solog RSS Feed Generator
  * @Info:       一个简单的 RSS 2.0 Feed 生成工具
- * @Date:       2013-09-15 11:40:17 +08:00
+ * @Date:       2013-09-16 20:04:50 +08:00
  * @File:       rss.class.php
  * @Author:     Jak Wings
  * @License:    GPLv3
@@ -43,7 +43,8 @@ class RssFeed
       $upDate = strtotime($upDate);
       $upDate = FALSE === $upDate ? time() : $upDate;
     }
-    $scheme = strtolower(explode('/', $_SERVER['SERVER_PROTOCOL'])[0]);
+    $info = explode('/', $_SERVER['SERVER_PROTOCOL']);
+    $scheme = strtolower($info[0]);
 
     // 必须的子元素
     $this->_channel['title'] = $title ?: '';
@@ -247,7 +248,8 @@ class RssFeed
     $padding = str_repeat($space, $level) ?: '';
     $element = $this->_GenerateElement($name, $value);
     $tag_open = $element['name'];
-    $tag_close = explode(' ', $element['name'], 2)[0];
+    $info = explode(' ', $element['name'], 2);
+    $tag_close = $info[0];
     if ( !is_array($value) ) {
       $value = $this->_EscapeEntities($element['value'], 'UTF-8');
     } else {
