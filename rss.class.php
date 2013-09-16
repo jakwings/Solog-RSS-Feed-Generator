@@ -3,7 +3,7 @@
  * @Version:    1.0.0
  * @Name:       Solog RSS Feed Generator
  * @Info:       一个简单的 RSS 2.0 Feed 生成工具
- * @Date:       2013-09-16 20:04:50 +08:00
+ * @Date:       2013-09-17 03:17:51 +08:00
  * @File:       rss.class.php
  * @Author:     Jak Wings
  * @License:    GPLv3
@@ -274,7 +274,7 @@ class RssFeed
   {
     $rss = array();
     $rss[] = '<?xml version="1.0" encoding="utf-8" standalone="yes" ?>';
-    $rss[] = '<rss version="2.0">';
+    $rss[] = '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
     $rss[] = '  <channel>';
     $rss[] = '    <docs>' . $this->_specification . '</docs>';
     $rss[] = '    <generator>' . $this->_generator . '</generator>';
@@ -291,6 +291,7 @@ class RssFeed
       }
       $rss[] = '    </item>';
     }
+    $rss[] = '    <atom:link href="' . $this->_EscapeEntities($this->_channel['link'], 'UTF-8') . '" rel="self" type="application/rss+xml" />';
     $rss[] = '  </channel>';
     $rss[] = '</rss>';
     return implode("\n", $rss);
