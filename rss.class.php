@@ -1,9 +1,9 @@
 <?php
 /******************************************************************************\
- * @Version:    1.0.1
+ * @Version:    1.0.0
  * @Name:       Solog RSS Feed Generator
  * @Info:       一个简单的 RSS 2.0 Feed 生成工具
- * @Date:       2014-03-02 16:33:08 +08:00
+ * @Date:       2014-02-08 12:40:18 +08:00
  * @File:       rss.class.php
  * @Author:     Jak Wings
  * @License:    MIT Licensed
@@ -180,7 +180,7 @@ class RssFeed
   private function _EscapeEntities($str, $encoding = 'UTF-8')
   {
     $patterns = array('&', '<', '>', '"', '\''); 
-    $replacement = array('&amp;', '&lt;', '&gt;', '&quot;', '&#39;'); 
+    $replacement = array('&amp;', '&lt;', '&gt;', '&quot;', '&apos;'); 
     if ( function_exists('mb_ereg_replace') ) {
       mb_regex_set_options('pz');
       mb_regex_encoding($encoding); 
